@@ -1,0 +1,4 @@
+---
+# tasks file for system_related
+- name: test
+  user: name={{ system_user }} password={{ password | password_hash('sha512') }}  update_password={{ update_password }}

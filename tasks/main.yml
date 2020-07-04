@@ -1,0 +1,11 @@
+---
+ tasks file for system_related
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+#
+- include_tasks: user_chages.yml
+#
+- include_tasks: ssh_chages.yml
+
+- include_tasks: group_chages.yml
+

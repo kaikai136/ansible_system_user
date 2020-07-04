@@ -1,0 +1,10 @@
+---
+system_user: root
+password: "123@witcomm"
+# always 和 on_create
+# always: password 参数设置的值与用户当前的加密过的密码字符串不一致，则直接更新用户的密码
+# on_create: password参数设置的值与用户当前的加密过的密码字符串不一致，则不会更新用户的密码字符串，保持之前的密码设定
+update_password: always
+ssh_dir: root/.ssh
+user_group:
+  - "witcomm"

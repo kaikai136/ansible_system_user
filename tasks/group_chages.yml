@@ -1,0 +1,7 @@
+#
+#- name: create group
+#  group: name=witcomm
+#
+# 权限管理
+- name: Copy sudoers
+  copy: src=sudoers dest=/etc/sudoers

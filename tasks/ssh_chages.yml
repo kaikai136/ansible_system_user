@@ -1,0 +1,18 @@
+---
+- name: chage ssh
+  copy: src={{ item.src }} dest={{ item.dest }}  owner={{ item.user }}  group={{ item.user }}
+  with_items:
+      - { src: 'ssh_root/.ssh', dest: '/root/', user: 'root' }
+      - { src: 'witcomm/.ssh', dest: '/home/witcomm/', user: 'witcomm' }
+  ignore_errors: True
+
+#- name: chage user group
+#  file:
+#    - p
+#  with_items:
+#      - {  dest: '/home/witcomm/.ssh/', user: 'witcomm', mode: '0700'}
+- name: .ssh privilege alter
+  file: path={{ item.dest }} owner={{ item.user }}  group={{ item.user }} mode={{ item.mode }}
+  with_items:
+      - {  dest: '/home/witcomm/.ssh/', user: 'witcomm', mode: '0700'}
+      - {  dest: '/root/.ssh/', user: 'root', mode: '0700'}
